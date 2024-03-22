@@ -69,18 +69,29 @@ namespace Circle
 
         private void Calculating_Click(object sender, RoutedEventArgs e)
         {
+            foreach (var item in Container.Children)
+            {
+                if(item is TextBox text)
+                {
+                    if(string.IsNullOrEmpty(text.Text))
+                    {
+                        MessageBox.Show($"{text.Name} is empty");
+                        return;
+                    }
+                }
+            }
             try
             {
                 var p = Helper.Calc(P1X.Text.ToFloat(), P2X.Text.ToFloat(),
                 P1Y.Text.ToFloat(), P2Y.Text.ToFloat(),
                 Radius.Text.ToFloat(), Degrees.Text.ToFloat(),
                 Helper.Vector.Сlockwise, Count.Text.ToInteger());
-                
+
                 DrawCoordinates(p);
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
-                if(ex is ArgumentOutOfRangeException)
+                if (ex is ArgumentOutOfRangeException)
                 {
                     MessageBox.Show(ex.Message);
                 }
