@@ -71,7 +71,7 @@ namespace Circle
         {
             float radians = (float)Math.Atan2(d0.Y - p0.Y, d0.X - p0.X) - (float)Math.Atan2(p.Y - p0.Y, p.X - p0.X);
             float degrees = (float)Math.Round((180 / (float)Math.PI) * radians);
-            float e = 360 * (p.Y < 0 ? 1 : 0);
+            float e = 360 * (p.Y < p0.Y ? 1 : 0);
             return Math.Abs(degrees - e);
         }
 

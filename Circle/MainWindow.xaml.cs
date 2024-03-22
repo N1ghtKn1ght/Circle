@@ -75,10 +75,7 @@ namespace Circle
                 P1Y.Text.ToFloat(), P2Y.Text.ToFloat(),
                 Radius.Text.ToFloat(), Degrees.Text.ToFloat(),
                 Helper.Vector.Сlockwise, Count.Text.ToInteger());
-                //var p = Helper.Calc(20f, 0f,
-                //40f, 20f,
-                //20, 90,
-                //Helper.Vector.Сounterclockwise, 5);
+                
                 DrawCoordinates(p);
             }
             catch(Exception ex) 

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Circle", "Circle\Circle.csproj", "{C751DF07-4EB5-4585-815D-3E3E89981FD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircleTest", "CircleTest\CircleTest.csproj", "{C91F4B04-BFFE-4280-B0E8-7BFC3F5E2B39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,14 @@ Global
 		{C751DF07-4EB5-4585-815D-3E3E89981FD2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C751DF07-4EB5-4585-815D-3E3E89981FD2}.Release|x64.ActiveCfg = Release|x64
 		{C751DF07-4EB5-4585-815D-3E3E89981FD2}.Release|x64.Build.0 = Release|x64
+		{C91F4B04-BFFE-4280-B0E8-7BFC3F5E2B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C91F4B04-BFFE-4280-B0E8-7BFC3F5E2B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C91F4B04-BFFE-4280-B0E8-7BFC3F5E2B39}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C91F4B04-BFFE-4280-B0E8-7BFC3F5E2B39}.Debug|x64.Build.0 = Debug|Any CPU
+		{C91F4B04-BFFE-4280-B0E8-7BFC3F5E2B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C91F4B04-BFFE-4280-B0E8-7BFC3F5E2B39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C91F4B04-BFFE-4280-B0E8-7BFC3F5E2B39}.Release|x64.ActiveCfg = Release|Any CPU
+		{C91F4B04-BFFE-4280-B0E8-7BFC3F5E2B39}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
