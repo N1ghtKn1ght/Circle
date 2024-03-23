@@ -61,8 +61,9 @@ namespace Circle
             if (string.IsNullOrEmpty(e.Text))
                 return;
             TextBox textBox = sender as TextBox;
-            e.Handled = !(Char.IsDigit(e.Text, 0) || (e.Text == ".")
-               && (!textBox.Text.Contains(".") && textBox.Text.Length != 0));
+            e.Handled = !(Char.IsDigit(e.Text, 0) || 
+                (e.Text == "." && !textBox.Text.Contains(".") && textBox.Text.Length != 0) 
+                || (e.Text == "-") && !textBox.Text.Contains("-") && textBox.Text.Length == 0);
         }
         private void NumbersInteger_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {

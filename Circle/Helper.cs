@@ -26,7 +26,7 @@ namespace Circle
                 p1 = p2;
                 p2 = temp;
             }
-            float betweenAngles = Helper.AngleBetween(p0, p2, p1) % 180;
+            float betweenAngles = Helper.AngleBetween(p0, p2, p1);
             float step = ((360 * (int)vector) - betweenAngles) / (count + 1);
             float d = p2.Angle;
             Point[] points = new Point[count + 2];
