@@ -51,6 +51,11 @@
             <TextBlock Grid.Row="4" Grid.Column="0" Text="∠α: " FontSize="{Binding ElementName=P1X, Path=FontSize}"/>
             <TextBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" x:Name="Degrees" Width="{Binding ElementName=P1X, Path=Width}" FontSize="{Binding ElementName=P1X, Path=FontSize}" PreviewTextInput="NumbersInteger_PreviewTextInput"/>
 
+            <ComboBox x:Name="Orientation" VerticalAlignment="Center" FontSize="{Binding ElementName=P1X, Path=FontSize}" 
+                      Width="{Binding ElementName=P1X, Path=Width}" 
+                      Grid.Row="4" Grid.Column="3" SelectedIndex="0">
+            </ComboBox>
+            
             <Button x:Name="Calculating" Grid.Row="5" Grid.ColumnSpan="5" Content="Calc" FontSize="{Binding ElementName=P1X, Path=FontSize}" 
                 VerticalAlignment="Center" HorizontalAlignment="Center" Width="75" Click="Calculating_Click"/>
         </Grid>

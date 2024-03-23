@@ -20,6 +20,12 @@ namespace Circle
             p2.Angle = Helper.AngleBetween(p0, p2, d0);
             if(!CheckPoint(p0, radius, ref p2))
                 throw new ArgumentOutOfRangeException("The second point out of range of the circle");
+            if(p1.X < p2.X)
+            {
+                Point temp = p1;
+                p1 = p2;
+                p2 = temp;
+            }
             float betweenAngles = Helper.AngleBetween(p0, p2, p1) % 180;
             float step = ((360 * (int)vector) - betweenAngles) / (count + 1);
             float d = p2.Angle;

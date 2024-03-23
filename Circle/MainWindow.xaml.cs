@@ -25,6 +25,10 @@ namespace Circle
         public MainWindow()
         {
             InitializeComponent();
+            foreach(var item in Enum.GetValues(typeof(Helper.Vector)))
+            {
+                Orientation.Items.Add(item.ToString());
+            }
         }
 
         private void DrawCoordinates(Point[] points)
@@ -67,7 +71,7 @@ namespace Circle
             e.Handled = !Char.IsDigit(e.Text, 0);
         }
 
-        private void Calculating_Click(object sender, RoutedEventArgs e)
+        private async void Calculating_Click(object sender, RoutedEventArgs e)
         {
             foreach (var item in Container.Children)
             {
@@ -80,22 +84,36 @@ namespace Circle
                     }
                 }
             }
-            try
+            Point[] points = new Point[0];
+            float x1 = P1X.Text.ToFloat();
+            float x2 = P2X.Text.ToFloat();
+            float y1 = P1Y.Text.ToFloat();
+            float y2 = P2Y.Text.ToFloat();
+            float radius = Radius.Text.ToFloat();
+            float degrees = Degrees.Text.ToFloat();
+            Helper.Vector vector = (Helper.Vector)Orientation.SelectedIndex;
+            int count = Count.Text.ToInteger();
+            await Task.Run(() =>
             {
-                var p = Helper.Calc(P1X.Text.ToFloat(), P2X.Text.ToFloat(),
-                P1Y.Text.ToFloat(), P2Y.Text.ToFloat(),
-                Radius.Text.ToFloat(), Degrees.Text.ToFloat(),
-                Helper.Vector.Сlockwise, Count.Text.ToInteger());
-
-                DrawCoordinates(p);
-            }
-            catch (Exception ex)
-            {
-                if (ex is ArgumentOutOfRangeException)
+                try
                 {
-                    MessageBox.Show(ex.Message);
+                    points = Helper.Calc(x1, x2,
+                                         y1, y2,
+                                         radius, degrees,
+                                         vector, count);
+
                 }
-            }
+                catch (Exception ex)
+                {
+                    if (ex is ArgumentOutOfRangeException)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            });
+
+            DrawCoordinates(points);
+
         }
     }
 }
